@@ -1,6 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 
+const port=process.env.PORT||8000;
 const app = express();
 app.set("view engine","ejs");
 app.use(bodyParser.urlencoded({extended:true}));
@@ -40,6 +41,6 @@ app.get("/work",function(req,res){
     res.render("list",{kindOfList:"Work",newListItem:workItems});
 })
 
-app.listen(3000,function(){ 
-    console.log("Server is up at port 3000");
+app.listen(port,function(){ 
+    console.log(`Server is up at port http://127.0.0.1:${port}`);
 });
