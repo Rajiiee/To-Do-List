@@ -25,7 +25,7 @@ app.get("/",function(req,res){
 app.post("/",function(req,res){
     console.log(req.body);
 
-    let item=req.body.newItem;
+    let item=req.body.newItem;git
     
     if(req.body.list==="Work"){
         workItems.push(item);
