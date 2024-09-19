@@ -41,6 +41,11 @@ app.get("/work",function(req,res){
     res.render("list",{kindOfList:"Work",newListItem:workItems});
 })
 
+app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).send('Something broke!');
+  });
+
 const PORT=process.env.PORT||3000;
 app.listen(PORT,function(){ 
     console.log(`Server is up at port http://127.0.0.1:${PORT}`);
