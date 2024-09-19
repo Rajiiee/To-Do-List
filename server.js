@@ -25,7 +25,7 @@ app.get("/",function(req,res){
 app.post("/",function(req,res){
     console.log(req.body);
 
-    let item=req.body.newItem;git
+    let item=req.body.newItem;
     
     if(req.body.list==="Work"){
         workItems.push(item);
@@ -41,6 +41,6 @@ app.get("/work",function(req,res){
     res.render("list",{kindOfList:"Work",newListItem:workItems});
 })
 
-app.listen(port,function(){ 
+app.listen(8080,function(){ 
     console.log(`Server is up at port http://127.0.0.1:${port}`);
 });
