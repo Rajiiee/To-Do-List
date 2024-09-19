@@ -41,6 +41,7 @@ app.get("/work",function(req,res){
     res.render("list",{kindOfList:"Work",newListItem:workItems});
 })
 
-app.listen(8080,function(){ 
-    console.log(`Server is up at port http://127.0.0.1:${port}`);
+const PORT=process.env.PORT||3000;
+app.listen(PORT,function(){ 
+    console.log(`Server is up at port http://127.0.0.1:${PORT}`);
 });
